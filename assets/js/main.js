@@ -80,6 +80,33 @@
     // this script attaches its listeners above, so check directly too.
     captureDuration();
 
+    // Mobile Safari (iOS) won't paint any seeked frame of a video that has
+    // never actually played, even if you only ever set .currentTime by
+    // script. A muted+playsinline video is allowed to autoplay there, so
+    // briefly play then immediately pause it once to "unlock" frame
+    // rendering before we start scrubbing it via scroll.
+    var unlocked = false;
+    function unlockVideoFrame() {
+      if (unlocked) return;
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.then(function () {
+          video.pause();
+          unlocked = true;
+        }).catch(function () {
+          // Autoplay blocked — try again on the first real user interaction.
+        });
+      } else {
+        try { video.pause(); } catch (e) {}
+        unlocked = true;
+      }
+    }
+    if (video.readyState >= 1) unlockVideoFrame();
+    video.addEventListener('loadedmetadata', unlockVideoFrame, { once: true });
+    ['scroll', 'touchstart'].forEach(function (evt) {
+      window.addEventListener(evt, unlockVideoFrame, { once: true, passive: true });
+    });
+
     function computeProgress() {
       // Video is pinned (position: sticky) inside a track that's taller than
       // the viewport on desktop. On mobile there's no extra height, so the
