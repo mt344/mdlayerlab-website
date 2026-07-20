@@ -1,0 +1,10 @@
+# Source photos/video/PDF used only during design — not needed to serve the site
+Bilder/
+
+# Local tooling config
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

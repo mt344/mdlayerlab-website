@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MD Layer Lab – 3D-Druck nach Maß für Privatpersonen</title>
+<meta name="description" content="MD Layer Lab druckt deine Idee: Deko, Ersatzteile und individuelle Lösungen im 3D-Druck – in jeder Farbe, aus hochwertigem Material, persönlich betreut.">
+<meta property="og:title" content="MD Layer Lab – 3D-Druck nach Maß">
+<meta property="og:description" content="Deine Idee, dein Problem, deine Farbe – wir designen und drucken es für dich.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0d1b30">
+<link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Intro / Layer-Build Animation -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-stack" id="introStack"></div>
+  <div class="intro-word">
+    <span>MD</span><span class="accent">LAYER</span><span>LAB</span>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <img src="assets/img/brand/logo.jpg" alt="MD Layer Lab Logo" class="brand-mark">
+      <span class="brand-word">MD <em>Layer</em> Lab</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="#leistungen" data-i18n="nav.services">Leistungen</a>
+      <a href="#materialien" data-i18n="nav.materials">Materialien</a>
+      <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
+      <a href="#ablauf" data-i18n="nav.process">Ablauf</a>
+      <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Sprache wechseln / Switch language">
+        <span class="lang-opt is-active" data-lang-opt="de">DE</span>
+        <span class="lang-opt" data-lang-opt="en">EN</span>
+      </button>
+      <a class="btn btn-whatsapp btn-sm header-wa" href="https://wa.me/message/5LC736UJI4IAH1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.4 0-.5C11 9.2 10.5 8 10.3 7.5c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20 12 20z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-track">
+    <div class="hero-pin">
+      <video
+        id="heroVideo"
+        class="hero-video"
+        src="assets/video/hero-print.mp4"
+        poster="assets/img/brand/printer.jpg"
+        muted
+        playsinline
+        preload="auto"
+        aria-label="3D-Drucker beim Extrudieren von Filament"
+      ></video>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="wrap hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">3D-Druck-Studio für Privatpersonen</p>
+        <h1 data-i18n="hero.title">Deine Idee.<br>Schicht für Schicht<br><span class="accent-text">Wirklichkeit.</span></h1>
+        <p class="lede" data-i18n="hero.lede">Du hast ein Problem, eine Vorstellung oder eine Lücke in der Wohnung, die genau ein Teil füllen könnte? Wir designen es gemeinsam mit dir und drucken es – in nahezu jeder Farbe, die du dir wünschst.</p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary" data-i18n="hero.ctaPrimary">Jetzt Anfrage stellen</a>
+          <a href="#galerie" class="btn btn-ghost btn-ghost-light" data-i18n="hero.ctaSecondary">Projekte ansehen</a>
+        </div>
+        <ul class="hero-trust hero-trust-light">
+          <li data-i18n="hero.trust1">Eigenes Design &amp; Beratung</li>
+          <li data-i18n="hero.trust2">Gedruckt mit Bambu-Lab-Technologie</li>
+          <li data-i18n="hero.trust3">Farbe frei wählbar</li>
+        </ul>
+      </div>
+
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span data-i18n="hero.scroll">Scrollen</span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="services.eyebrow">Leistungen</p>
+      <h2 data-i18n="services.title">Wofür Menschen zu uns kommen</h2>
+      <p class="section-lede" data-i18n="services.lede">Kein Auftrag ist zu klein oder zu ungewöhnlich. Erzähl uns, was dir vorschwebt – wir finden eine Lösung, die passt.</p>
+    </div>
+    <div class="cards cards-4">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 6.5L12 11l8-4.5M12 11v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="services.card1.title">Individuelle Wünsche</h3>
+        <p data-i18n="services.card1.text">Du hast eine Idee, ein Problem oder ein fehlendes Teil? Wir entwerfen gemeinsam mit dir das passende 3D-Modell und setzen es um.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 3v18M4.5 8.5L12 3l7.5 5.5M4.5 8.5v9L12 21l7.5-3.5v-9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="services.card2.title">Deko &amp; Geschenke</h3>
+        <p data-i18n="services.card2.text">Vasen, Figuren, personalisierte Schilder oder Geschenke mit Wiedererkennungswert – gedruckt in der Farbe deiner Wahl.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M14.7 6.3a4 4 0 015.7 5.6l-1 1-5.6-5.6 1-1zM3 21l1-4 10.3-10.3 3.7 3.7L7.7 20 3 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="services.card3.title">Ersatzteile &amp; Reparatur</h3>
+        <p data-i18n="services.card3.text">Ein Haushaltsgerät hat ein kaputtes Teil? Wir vermessen, konstruieren und drucken einen passgenauen Ersatz.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm11.5 1.5l2 2 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="services.card4.title">Prototypen &amp; Firmenkunden</h3>
+        <p data-i18n="services.card4.text">Auch für Unternehmen: Funktionsprototypen, Kleinserien oder individuelle Werbe- und Geschenkartikel für Kund:innen und Mitarbeitende.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALIEN -->
+<section class="section section-soft" id="materialien">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="materials.eyebrow">Materialien</p>
+      <h2 data-i18n="materials.title">Das richtige Material für dein Projekt</h2>
+      <p class="section-lede" data-i18n="materials.lede">Jedes Material hat seine Stärken. Wähle ein Material für alle passenden Farben – oder sieh dir mit einem Klick jede Farbe auf einen Blick an. Klick auf eine Farbe für Details.</p>
+    </div>
+
+    <div class="tabs" id="materialTabs">
+      <div class="tab-list" role="tablist" aria-label="Materialien" id="tabList"></div>
+      <div class="tab-panels" id="tabPanels"></div>
+    </div>
+  </div>
+</section>
+
+<dialog class="color-dialog" id="colorDialog">
+  <button class="color-dialog-close" id="colorDialogClose" type="button" aria-label="Schließen" data-i18n-aria="dialog.close">
+    <svg viewBox="0 0 24 24" class="icon"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="color-dialog-swatch" id="colorDialogSwatch"></div>
+  <div class="color-dialog-body">
+    <p class="color-dialog-material" id="colorDialogMaterial"></p>
+    <h3 id="colorDialogName"></h3>
+    <p id="colorDialogDesc"></p>
+  </div>
+</dialog>
+
+<!-- GALERIE -->
+<section class="section" id="galerie">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="gallery.eyebrow">Galerie</p>
+      <h2 data-i18n="gallery.title">Ausgewählte Projekte</h2>
+      <p class="section-lede" data-i18n="gallery.lede">Ein kleiner Einblick, was bei uns schon vom Drucker gewandert ist.</p>
+    </div>
+    <div class="gallery-grid gallery-grid-3">
+      <figure class="gallery-item span-2 gallery-banner">
+        <picture><source srcset="assets/img/gallery/ams-farben.webp" type="image/webp"><img src="assets/img/gallery/ams-farben.jpg" alt="3D-Drucker mit AMS und mehreren Filamentfarben" loading="lazy" width="1200" height="900"></picture>
+        <figcaption data-i18n="gallery.item4">So entsteht dein Projekt – in deiner Wunschfarbe</figcaption>
+      </figure>
+      <figure class="gallery-item gallery-item-featured">
+        <picture><source srcset="assets/img/gallery/arzt-kittel.webp" type="image/webp"><img src="assets/img/gallery/arzt-kittel.jpg" alt="Stifthalter in Kittel-Form für medizinisches Personal" loading="lazy" width="900" height="1200"></picture>
+        <figcaption data-i18n="gallery.item3">Stiftehalter als Geschenkidee</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <picture><source srcset="assets/img/gallery/neuron-schild.webp" type="image/webp"><img src="assets/img/gallery/neuron-schild.jpg" alt="Personalisiertes Deko-Schild „Mein letzter Nerv“" loading="lazy" width="900" height="1200"></picture>
+        <figcaption data-i18n="gallery.item2">Personalisiertes Geschenk</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="section section-soft" id="ablauf">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="process.eyebrow">Ablauf</p>
+      <h2 data-i18n="process.title">So einfach kommst du zu deinem Objekt</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num">01</span>
+        <h3 data-i18n="process.step1.title">Anfrage senden</h3>
+        <p data-i18n="process.step1.text">Beschreib uns deine Idee, dein Problem oder schick ein Foto – über das Formular oder direkt per WhatsApp.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">02</span>
+        <h3 data-i18n="process.step2.title">Design &amp; Angebot</h3>
+        <p data-i18n="process.step2.text">Wir besprechen Größe, Material und Farbe mit dir und erstellen ein unverbindliches Angebot.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">03</span>
+        <h3 data-i18n="process.step3.title">Druck in deiner Farbe</h3>
+        <p data-i18n="process.step3.text">Nach deiner Freigabe drucken wir dein Objekt Schicht für Schicht – sauber und in gewünschter Qualität.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">04</span>
+        <h3 data-i18n="process.step4.title">Abholung oder Versand</h3>
+        <p data-i18n="process.step4.text">Du bekommst dein fertiges Teil bei uns abgeholt oder bequem nach Hause geliefert.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="section" id="kontakt">
+  <div class="wrap kontakt-wrap">
+    <div class="kontakt-info">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+      <h2 data-i18n="contact.title">Erzähl uns von deiner Idee</h2>
+      <p class="section-lede" data-i18n="contact.lede">Je genauer deine Beschreibung, desto schneller können wir dir ein passendes Angebot machen. Du erreichst uns auch direkt:</p>
+
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 7 8-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <a href="mailto:mdlayerlab@outlook.com">mdlayerlab@outlook.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1.1.5 1.1 1.1V20c0 .6-.5 1.1-1.1 1.1C10.7 21.1 2.9 13.3 2.9 3.1 2.9 2.5 3.4 2 4 2h3.3c.6 0 1.1.5 1.1 1.1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+436556 7219497">+43 655 67219497</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.4 0-.5C11 9.2 10.5 8 10.3 7.5c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20 12 20z"/></svg>
+          <a href="https://wa.me/message/5LC736UJI4IAH1" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp-Chat starten</a>
+        </li>
+      </ul>
+
+      <a class="btn btn-whatsapp" href="https://wa.me/message/5LC736UJI4IAH1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.4 0-.5C11 9.2 10.5 8 10.3 7.5c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 .9-1 2.3s1 2.6 1.1 2.8c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.2L2 22l4.9-1.4C8.4 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20 12 20z"/></svg>
+        <span data-i18n="contact.whatsappBtn">Schneller Chat auf WhatsApp</span>
+      </a>
+    </div>
+
+    <form class="kontakt-form" id="kontaktForm" action="https://formsubmit.co/mdlayerlab@outlook.com" method="POST">
+      <input type="hidden" name="_subject" value="Neue Anfrage über die Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="form-row">
+        <label for="f-name" data-i18n="form.name">Name</label>
+        <input id="f-name" name="Name" type="text" required autocomplete="name">
+      </div>
+
+      <div class="form-row">
+        <label for="f-email" data-i18n="form.email">E-Mail-Adresse</label>
+        <input id="f-email" name="E-Mail" type="email" required autocomplete="email">
+      </div>
+
+      <div class="form-row">
+        <label for="f-idea" data-i18n="form.idea">Was schwebt dir vor?</label>
+        <textarea id="f-idea" name="Idee / Vorstellung" rows="3" required data-i18n-ph="form.ideaPh" placeholder="z. B. eine Deko-Vase für das Wohnzimmer, ein Ersatzteil für ..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="f-problem" data-i18n="form.problem">Wie sieht das Problem / Objekt aus?</label>
+        <textarea id="f-problem" name="Beschreibung des Problems / Objekts" rows="3" data-i18n-ph="form.problemPh" placeholder="Beschreibe Form, Funktion oder füge ein Foto per E-Mail nach"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="f-size" data-i18n="form.size">Ungefähre Größe</label>
+        <input id="f-size" name="Größe" type="text" data-i18n-ph="form.sizePh" placeholder="z. B. ca. 10 x 10 x 15 cm">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" data-i18n="form.submit">Anfrage absenden</button>
+      <p class="form-note" data-i18n="form.note">Wir melden uns so schnell wie möglich per E-Mail bei dir zurück.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/brand/logo.jpg" alt="MD Layer Lab Logo" class="brand-mark">
+      <p data-i18n="footer.tagline">3D-Druck-Studio für individuelle Ideen &amp; Deko.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Rechtliches">
+      <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> MD Layer Lab</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
