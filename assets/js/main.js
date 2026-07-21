@@ -161,14 +161,14 @@
         en: 'Plant-based plastic with a stable, dimensionally accurate structure and a slightly glossy surface. Ideal for decor, housings and everyday indoor objects.'
       },
       colors: [
-        { name: { de: 'Jade White', en: 'Jade White' }, hex: '#F0E9DC', img: 'vase-white', desc: { de: 'Sanftes, leicht warmes Weiß – elegant und vielseitig einsetzbar.', en: 'Soft, slightly warm white — elegant and versatile.' } },
-        { name: { de: 'Cocoa Brown', en: 'Cocoa Brown' }, hex: '#9C4A2B', desc: { de: 'Tiefes, sattes Braun – natürlich und hochwertig wirkend.', en: 'Deep, rich brown — natural and premium-looking.' } },
+        { name: { de: 'Jade White', en: 'Jade White' }, hex: '#F0E9DC', img: 'jade-white', desc: { de: 'Sanftes, leicht warmes Weiß – elegant und vielseitig einsetzbar.', en: 'Soft, slightly warm white — elegant and versatile.' } },
+        { name: { de: 'Cocoa Brown', en: 'Cocoa Brown' }, hex: '#9C4A2B', img: 'cocoa-brown', desc: { de: 'Tiefes, sattes Braun – natürlich und hochwertig wirkend.', en: 'Deep, rich brown — natural and premium-looking.' } },
         { name: { de: 'Gray', en: 'Gray' }, hex: '#9EA3A8', img: 'vase-grey', desc: { de: 'Klassisches Grau – schlicht, modern und technisch.', en: 'Classic grey — simple, modern and technical.' } },
         { name: { de: 'Sakura Pink', en: 'Sakura Pink' }, hex: '#E9AFC0', img: 'vase-pink', desc: { de: 'Zartes Rosa – weich und freundlich.', en: 'Delicate pink — soft and friendly.' } },
-        { name: { de: 'Candy', en: 'Candy' }, hex: '#F2A0C0', desc: { de: 'Heller Pastellton – süß und verspielt.', en: 'Light pastel tone — sweet and playful.' } },
+        { name: { de: 'Candy', en: 'Candy' }, hex: '#F2A0C0', img: 'candy', desc: { de: 'Heller Pastellton – süß und verspielt.', en: 'Light pastel tone — sweet and playful.' } },
         { name: { de: 'Lavender Purple', en: 'Lavender Purple' }, hex: '#A995D9', img: 'vase-purple', desc: { de: 'Sanftes Violett – elegant und verspielt.', en: 'Gentle purple — elegant and playful.' } },
-        { name: { de: 'Pastellblau', en: 'Pastel Blue' }, hex: '#B6D3EC', desc: { de: 'Helles Blau – weich und beruhigend.', en: 'Light blue — soft and calming.' } },
-        { name: { de: 'Sapphire Blue', en: 'Sapphire Blue' }, hex: '#2E6BDD', desc: { de: 'Kräftiges Blau – modern und ausdrucksstark.', en: 'Bold blue — modern and expressive.' } },
+        { name: { de: 'Pastellblau', en: 'Pastel Blue' }, hex: '#B6D3EC', img: 'pastellblau', desc: { de: 'Helles Blau – weich und beruhigend.', en: 'Light blue — soft and calming.' } },
+        { name: { de: 'Sapphire Blue', en: 'Sapphire Blue' }, hex: '#2E6BDD', img: 'sapphire-blue', desc: { de: 'Kräftiges Blau – modern und ausdrucksstark.', en: 'Bold blue — modern and expressive.' } },
         { name: { de: 'Charcoal Black', en: 'Charcoal Black' }, hex: '#19191B', img: 'vase-black', desc: { de: 'Dunkles Graphitschwarz – modern und technisch.', en: 'Dark graphite black — modern and technical.' } }
       ]
     },
@@ -184,11 +184,11 @@
       },
       colors: [
         { name: { de: 'Caramel', en: 'Caramel' }, hex: '#B97A4B', img: 'vase-tan', desc: { de: 'Warmes Braun – dezent und zeitlos.', en: 'Warm brown — subtle and timeless.' } },
-        { name: { de: 'Mandarin Orange', en: 'Mandarin Orange' }, hex: '#E5601A', desc: { de: 'Leuchtendes Orange – auffällig und energiegeladen.', en: 'Bright orange — bold and energetic.' } },
+        { name: { de: 'Mandarin Orange', en: 'Mandarin Orange' }, hex: '#E5601A', img: 'mandarin-orange', desc: { de: 'Leuchtendes Orange – auffällig und energiegeladen.', en: 'Bright orange — bold and energetic.' } },
         { name: { de: 'Dark Blue', en: 'Dark Blue' }, hex: '#1B2A52', img: 'vase-navy', desc: { de: 'Tiefes Blau – elegant, ruhig und hochwertig.', en: 'Deep blue — elegant, calm and premium.' } },
         { name: { de: 'Apple Green', en: 'Apple Green' }, hex: '#8DC63F', img: 'vase-lime', desc: { de: 'Frisches, helles Grün – lebendig und modern.', en: 'Fresh, bright green — vivid and modern.' } },
         { name: { de: 'Grass Green', en: 'Grass Green' }, hex: '#2E9E4F', img: 'vase-green', desc: { de: 'Natürliches Grün – kräftig und harmonisch.', en: 'Natural green — bold and harmonious.' } },
-        { name: { de: 'Dark Green', en: 'Dark Green' }, hex: '#22432B', desc: { de: 'Sattes Dunkelgrün – edel und natürlich.', en: 'Rich dark green — refined and natural.' } },
+        { name: { de: 'Dark Green', en: 'Dark Green' }, hex: '#22432B', img: 'dark-green', desc: { de: 'Sattes Dunkelgrün – edel und natürlich.', en: 'Rich dark green — refined and natural.' } },
         { name: { de: 'White', en: 'White' }, hex: '#FFFFFF', img: 'vase-white', desc: { de: 'Reines Weiß – minimalistisch und hochwertig.', en: 'Pure white — minimalist and premium.' } },
         { name: { de: 'Black', en: 'Black' }, hex: '#111113', img: 'vase-black', desc: { de: 'Tiefes Schwarz – edel und modern.', en: 'Deep black — refined and modern.' } }
       ]
@@ -205,7 +205,7 @@
       },
       colors: [
         { name: { de: 'White', en: 'White' }, hex: '#F2F2EE', img: 'vase-white', desc: { de: 'Klares, deckendes Weiß – sauber, neutral und vielseitig.', en: 'Clear, opaque white — clean, neutral and versatile.' } },
-        { name: { de: 'Clear', en: 'Clear' }, hex: 'clear', desc: { de: 'Transparent mit leichter Trübung – ideal für Lichtdurchlässigkeit.', en: 'Transparent with a slight haze — ideal when light needs to pass through.' } },
+        { name: { de: 'Clear', en: 'Clear' }, hex: 'clear', img: 'petg-clear', desc: { de: 'Transparent mit leichter Trübung – ideal für Lichtdurchlässigkeit.', en: 'Transparent with a slight haze — ideal when light needs to pass through.' } },
         { name: { de: 'Light Gray', en: 'Light Gray' }, hex: '#B7BBC2', img: 'vase-grey', desc: { de: 'Helles Grau – modern, technisch und unauffällig elegant.', en: 'Light grey — modern, technical and quietly elegant.' } }
       ]
     },
@@ -231,12 +231,13 @@
   };
 
   function swatchStyle(color) {
-    if (color.hex === 'clear') return '';
     if (color.img) return 'background-image:url(assets/img/gallery/' + color.img + '.jpg)';
+    if (color.hex === 'clear') return '';
     return 'background-color:' + color.hex;
   }
 
   function buildSwatchButton(material, color, lang) {
+    var isClear = color.hex === 'clear' && !color.img;
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'swatch';
@@ -245,11 +246,11 @@
     btn.setAttribute('data-name', color.name[lang]);
     btn.setAttribute('data-desc', color.desc[lang]);
     btn.setAttribute('data-swatch-style', swatchStyle(color));
-    btn.setAttribute('data-clear', color.hex === 'clear' ? '1' : '0');
+    btn.setAttribute('data-clear', isClear ? '1' : '0');
 
     var dot = document.createElement('span');
-    dot.className = 'swatch-dot' + (color.hex === 'clear' ? ' is-clear' : '');
-    if (color.hex !== 'clear') dot.setAttribute('style', swatchStyle(color));
+    dot.className = 'swatch-dot' + (isClear ? ' is-clear' : '');
+    if (!isClear) dot.setAttribute('style', swatchStyle(color));
 
     var label = document.createElement('span');
     label.className = 'swatch-label';
@@ -432,10 +433,15 @@
       'gallery.eyebrow': 'Gallery',
       'gallery.title': 'Selected projects',
       'gallery.lede': "A small look at what's already come off our printer.",
-      'gallery.item1': 'Custom-designed phone stand',
       'gallery.item2': 'Personalised gift',
-      'gallery.item3': 'Pen holder as a gift idea',
-      'gallery.item4': 'How your project comes to life — in your favourite colour',
+      'gallery.helm': 'Wall-mounted helmet holder',
+      'gallery.helmOhne': 'Without helmet',
+      'gallery.helmMit': 'With helmet',
+      'gallery.printer': 'How your project comes to life — in your favourite colour',
+      'gallery.haarwerk': 'Business card holder for a hair salon',
+      'gallery.sphere': 'Decor piece, ribbed finish',
+      'gallery.bunny': 'Custom-designed phone stand',
+      'gallery.blumen': 'Decorative bookends with a floral motif',
 
       'process.eyebrow': 'Process',
       'process.title': 'This is how easy it is to get your object',
@@ -550,11 +556,29 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------------- Before/after compare card (helmet holder) ---------------- */
+  function initCompareCards() {
+    document.querySelectorAll('.showcase-compare').forEach(function (card) {
+      var buttons = card.querySelectorAll('.compare-btn');
+      var images = card.querySelectorAll('.compare-img');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var show = btn.getAttribute('data-show');
+          buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+          images.forEach(function (img) {
+            img.classList.toggle('is-active', img.getAttribute('data-state') === show);
+          });
+        });
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     runIntro();
     initNav();
     initHeroVideo();
     initColorDialog();
+    initCompareCards();
     initLanguage(); // also triggers first renderMaterials()
     initYear();
   });

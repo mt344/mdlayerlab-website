@@ -350,28 +350,53 @@ body.no-js .intro{display:none}
 }
 .color-dialog-close:hover{background:#fff}
 
-/* ============ Gallery ============ */
-.gallery-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:var(--space-2);
+/* ============ Gallery / Showcase ============ */
+.showcase-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);
+  grid-auto-flow:dense;
 }
-.gallery-grid-3{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
-.gallery-grid-3 .gallery-banner{height:340px}
-.gallery-grid-3 .gallery-item:not(.gallery-banner){height:280px}
-.gallery-item{margin:0;position:relative;border-radius:var(--radius-m);overflow:hidden;box-shadow:var(--shadow-card)}
-.gallery-item.span-2{grid-column:span 2}
-.gallery-item-featured{outline:3px solid var(--green-500);outline-offset:-3px}
-.gallery-item picture,.gallery-item img{width:100%;height:100%;object-fit:cover}
-.gallery-item figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:.9rem 1.1rem;
-  background:linear-gradient(0deg,rgba(7,15,30,.78),transparent);
-  color:#fff;font-weight:600;font-size:.9rem;
+.showcase-card{
+  margin:0;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-m);
+  overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-@media (max-width:760px){
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
-  .gallery-item.span-2{grid-column:span 2}
-  .gallery-grid-3{grid-auto-rows:auto}
-  .gallery-grid-3 .gallery-banner{height:220px}
-  .gallery-grid-3 .gallery-item:not(.gallery-banner){height:200px}
+.showcase-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-pop)}
+.showcase-card-wide{grid-column:span 2}
+.showcase-card picture,
+.showcase-card .compare-frame{
+  display:block;aspect-ratio:4/3;background:#fff;
+}
+.showcase-card img{
+  width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;
+}
+.showcase-card figcaption{
+  padding:.9rem 1.1rem 1.05rem;font-weight:600;font-size:.92rem;color:var(--navy-800);
+  border-top:1px solid var(--border);background:#fff;
+}
+
+/* Before/after compare card for the helmet mount */
+.showcase-compare .compare-frame{position:relative}
+.compare-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1rem;
+  opacity:0;transition:opacity .45s ease;
+}
+.compare-img.is-active{opacity:1}
+.compare-toggle{display:flex;gap:.5rem;margin-top:.6rem}
+.compare-btn{
+  flex:1;background:var(--bg-soft);border:1.5px solid var(--border);border-radius:999px;
+  padding:.45rem .9rem;font-weight:700;font-size:.8rem;color:var(--ink-soft);cursor:pointer;
+  transition:all .15s ease;
+}
+.compare-btn.is-active{background:var(--navy-800);border-color:var(--navy-800);color:#fff}
+.compare-btn:hover{border-color:var(--navy-800)}
+
+@media (max-width:900px){
+  .showcase-grid{grid-template-columns:repeat(2,1fr)}
+  .showcase-card-wide{grid-column:span 2}
+}
+@media (max-width:560px){
+  .showcase-grid{grid-template-columns:1fr}
+  .showcase-card-wide{grid-column:span 1}
 }
 
 /* ============ Steps ============ */

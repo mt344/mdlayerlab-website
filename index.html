@@ -176,19 +176,52 @@
       <h2 data-i18n="gallery.title">Ausgewählte Projekte</h2>
       <p class="section-lede" data-i18n="gallery.lede">Ein kleiner Einblick, was bei uns schon vom Drucker gewandert ist.</p>
     </div>
-    <div class="gallery-grid gallery-grid-3">
-      <figure class="gallery-item span-2 gallery-banner">
-        <picture><source srcset="assets/img/gallery/ams-farben.webp" type="image/webp"><img src="assets/img/gallery/ams-farben.jpg" alt="3D-Drucker mit AMS und mehreren Filamentfarben" loading="lazy" width="1200" height="900"></picture>
-        <figcaption data-i18n="gallery.item4">So entsteht dein Projekt – in deiner Wunschfarbe</figcaption>
+    <div class="showcase-grid">
+
+      <figure class="showcase-card showcase-card-wide showcase-compare" id="helmCompare">
+        <div class="compare-frame">
+          <img src="assets/img/gallery/helm-ohne.jpg" alt="Wandhalterung für Motorradhelm, ohne Helm" class="compare-img is-active" data-state="ohne">
+          <img src="assets/img/gallery/helm-mit.jpg" alt="Wandhalterung für Motorradhelm, mit montiertem Helm" class="compare-img" data-state="mit">
+        </div>
+        <figcaption>
+          <span data-i18n="gallery.helm">Helmhalter für die Wand</span>
+          <div class="compare-toggle" role="group" aria-label="Ansicht wählen">
+            <button type="button" class="compare-btn is-active" data-show="ohne" data-i18n="gallery.helmOhne">Ohne Helm</button>
+            <button type="button" class="compare-btn" data-show="mit" data-i18n="gallery.helmMit">Mit Helm</button>
+          </div>
+        </figcaption>
       </figure>
-      <figure class="gallery-item gallery-item-featured">
-        <picture><source srcset="assets/img/gallery/arzt-kittel.webp" type="image/webp"><img src="assets/img/gallery/arzt-kittel.jpg" alt="Stifthalter in Kittel-Form für medizinisches Personal" loading="lazy" width="900" height="1200"></picture>
-        <figcaption data-i18n="gallery.item3">Stiftehalter als Geschenkidee</figcaption>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/printer-ams.webp" type="image/webp"><img src="assets/img/gallery/printer-ams.jpg" alt="Bambu Lab 3D-Drucker mit AMS und mehreren Filamentfarben" loading="lazy"></picture>
+        <figcaption data-i18n="gallery.printer">So entsteht dein Projekt – in deiner Wunschfarbe</figcaption>
       </figure>
-      <figure class="gallery-item">
-        <picture><source srcset="assets/img/gallery/neuron-schild.webp" type="image/webp"><img src="assets/img/gallery/neuron-schild.jpg" alt="Personalisiertes Deko-Schild „Mein letzter Nerv“" loading="lazy" width="900" height="1200"></picture>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/haarwerk.webp" type="image/webp"><img src="assets/img/gallery/haarwerk.jpg" alt="Visitenkarten-Halter für einen Friseursalon" loading="lazy"></picture>
+        <figcaption data-i18n="gallery.haarwerk">Visitenkartenhalter für einen Friseursalon</figcaption>
+      </figure>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/neuron-schild.webp" type="image/webp"><img src="assets/img/gallery/neuron-schild.jpg" alt="Personalisiertes Deko-Schild „Mein letzter Nerv“" loading="lazy"></picture>
         <figcaption data-i18n="gallery.item2">Personalisiertes Geschenk</figcaption>
       </figure>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/sphere.webp" type="image/webp"><img src="assets/img/gallery/sphere.jpg" alt="Gerippte Deko-Kugel" loading="lazy"></picture>
+        <figcaption data-i18n="gallery.sphere">Deko-Objekt, Rippen-Optik</figcaption>
+      </figure>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/bunny-halter.webp" type="image/webp"><img src="assets/img/gallery/bunny-halter.jpg" alt="Hasenförmiger Handyhalter" loading="lazy"></picture>
+        <figcaption data-i18n="gallery.bunny">Handyhalter, individuell designt</figcaption>
+      </figure>
+
+      <figure class="showcase-card">
+        <picture><source srcset="assets/img/gallery/blumen-vasen.webp" type="image/webp"><img src="assets/img/gallery/blumen-vasen.jpg" alt="Deko-Blumensträuße als Buchstützen" loading="lazy"></picture>
+        <figcaption data-i18n="gallery.blumen">Deko-Buchstützen mit Blumenmotiv</figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
