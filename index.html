@@ -180,15 +180,21 @@
 
       <figure class="showcase-card showcase-card-wide showcase-compare" id="helmCompare">
         <div class="compare-frame">
-          <img src="assets/img/gallery/helm-ohne.jpg" alt="Wandhalterung für Motorradhelm, ohne Helm" class="compare-img is-active" data-state="ohne">
-          <img src="assets/img/gallery/helm-mit.jpg" alt="Wandhalterung für Motorradhelm, mit montiertem Helm" class="compare-img" data-state="mit">
+          <img src="assets/img/gallery/helm-mit.jpg" alt="Wandhalterung für Motorradhelm, mit montiertem Helm" class="compare-img-base">
+          <img src="assets/img/gallery/helm-ohne.jpg" alt="Wandhalterung für Motorradhelm, ohne Helm" class="compare-img-top">
+          <div
+            class="compare-handle"
+            role="slider"
+            tabindex="0"
+            aria-label="Vorher/Nachher: Helmhalter ohne oder mit Helm"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="50"
+          ><span class="compare-handle-grip"><svg viewBox="0 0 24 24" class="icon"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </div>
         <figcaption>
           <span data-i18n="gallery.helm">Helmhalter für die Wand</span>
-          <div class="compare-toggle" role="group" aria-label="Ansicht wählen">
-            <button type="button" class="compare-btn is-active" data-show="ohne" data-i18n="gallery.helmOhne">Ohne Helm</button>
-            <button type="button" class="compare-btn" data-show="mit" data-i18n="gallery.helmMit">Mit Helm</button>
-          </div>
+          <span class="compare-hint" data-i18n="gallery.helmHint">Schieben: ohne ↔ mit Helm</span>
         </figcaption>
       </figure>
 
@@ -200,11 +206,6 @@
       <figure class="showcase-card">
         <picture><source srcset="assets/img/gallery/haarwerk.webp" type="image/webp"><img src="assets/img/gallery/haarwerk.jpg" alt="Visitenkarten-Halter für einen Friseursalon" loading="lazy"></picture>
         <figcaption data-i18n="gallery.haarwerk">Visitenkartenhalter für einen Friseursalon</figcaption>
-      </figure>
-
-      <figure class="showcase-card">
-        <picture><source srcset="assets/img/gallery/neuron-schild.webp" type="image/webp"><img src="assets/img/gallery/neuron-schild.jpg" alt="Personalisiertes Deko-Schild „Mein letzter Nerv“" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.item2">Personalisiertes Geschenk</figcaption>
       </figure>
 
       <figure class="showcase-card">

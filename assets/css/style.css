@@ -351,52 +351,59 @@ body.no-js .intro{display:none}
 .color-dialog-close:hover{background:#fff}
 
 /* ============ Gallery / Showcase ============ */
+/* Masonry via CSS columns: every photo keeps its own natural aspect ratio
+   (nothing cropped, no leftover empty space), which is what keeps a mixed
+   set of portrait/landscape product shots looking uniform and clean. */
 .showcase-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);
-  grid-auto-flow:dense;
+  column-count:3;column-gap:var(--space-3);
 }
 .showcase-card{
-  margin:0;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-m);
-  overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column;
+  display:inline-block;width:100%;break-inside:avoid;margin:0 0 var(--space-3);
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-m);
+  overflow:hidden;box-shadow:var(--shadow-card);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .showcase-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-pop)}
-.showcase-card-wide{grid-column:span 2}
+.showcase-card-wide{column-span:all}
 .showcase-card picture,
-.showcase-card .compare-frame{
-  display:block;aspect-ratio:4/3;background:#fff;
-}
-.showcase-card img{
-  width:100%;height:100%;object-fit:contain;object-position:center;padding:1rem;
-}
+.showcase-card img{display:block;width:100%;height:auto}
 .showcase-card figcaption{
   padding:.9rem 1.1rem 1.05rem;font-weight:600;font-size:.92rem;color:var(--navy-800);
-  border-top:1px solid var(--border);background:#fff;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
 }
 
-/* Before/after compare card for the helmet mount */
-.showcase-compare .compare-frame{position:relative}
-.compare-img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:1rem;
-  opacity:0;transition:opacity .45s ease;
+/* Before/after drag-slider for the helmet mount */
+.showcase-compare .compare-frame{
+  position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-soft);
+  touch-action:none;cursor:ew-resize;
 }
-.compare-img.is-active{opacity:1}
-.compare-toggle{display:flex;gap:.5rem;margin-top:.6rem}
-.compare-btn{
-  flex:1;background:var(--bg-soft);border:1.5px solid var(--border);border-radius:999px;
-  padding:.45rem .9rem;font-weight:700;font-size:.8rem;color:var(--ink-soft);cursor:pointer;
-  transition:all .15s ease;
+.compare-img-base,.compare-img-top{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;
 }
-.compare-btn.is-active{background:var(--navy-800);border-color:var(--navy-800);color:#fff}
-.compare-btn:hover{border-color:var(--navy-800)}
+.compare-img-top{clip-path:inset(0 50% 0 0)}
+.compare-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:0;
+  display:flex;align-items:center;justify-content:center;
+  transform:translateX(-50%);
+}
+.compare-handle::before{
+  content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;
+  background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(15,24,38,.15);
+}
+.compare-handle-grip{
+  position:relative;width:42px;height:42px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;color:var(--navy-800);
+  box-shadow:var(--shadow-pop);pointer-events:none;
+}
+.compare-handle:focus-visible .compare-handle-grip{outline:2px solid var(--green-600);outline-offset:2px}
+.compare-hint{font-weight:500;font-size:.78rem;color:var(--ink-soft)}
 
 @media (max-width:900px){
-  .showcase-grid{grid-template-columns:repeat(2,1fr)}
-  .showcase-card-wide{grid-column:span 2}
+  .showcase-grid{column-count:2}
 }
 @media (max-width:560px){
-  .showcase-grid{grid-template-columns:1fr}
-  .showcase-card-wide{grid-column:span 1}
+  .showcase-grid{column-count:1}
 }
 
 /* ============ Steps ============ */

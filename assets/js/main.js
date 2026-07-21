@@ -433,10 +433,8 @@
       'gallery.eyebrow': 'Gallery',
       'gallery.title': 'Selected projects',
       'gallery.lede': "A small look at what's already come off our printer.",
-      'gallery.item2': 'Personalised gift',
       'gallery.helm': 'Wall-mounted helmet holder',
-      'gallery.helmOhne': 'Without helmet',
-      'gallery.helmMit': 'With helmet',
+      'gallery.helmHint': 'Drag: without ↔ with helmet',
       'gallery.printer': 'How your project comes to life — in your favourite colour',
       'gallery.haarwerk': 'Business card holder for a hair salon',
       'gallery.sphere': 'Decor piece, ribbed finish',
@@ -556,20 +554,54 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  /* ---------------- Before/after compare card (helmet holder) ---------------- */
+  /* ---------------- Before/after drag-slider (helmet holder) ---------------- */
   function initCompareCards() {
     document.querySelectorAll('.showcase-compare').forEach(function (card) {
-      var buttons = card.querySelectorAll('.compare-btn');
-      var images = card.querySelectorAll('.compare-img');
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var show = btn.getAttribute('data-show');
-          buttons.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
-          images.forEach(function (img) {
-            img.classList.toggle('is-active', img.getAttribute('data-state') === show);
-          });
-        });
+      var frame = card.querySelector('.compare-frame');
+      var topImg = card.querySelector('.compare-img-top');
+      var handle = card.querySelector('.compare-handle');
+      if (!frame || !topImg || !handle) return;
+
+      function setPosition(pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        topImg.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        handle.style.left = pct + '%';
+        handle.setAttribute('aria-valuenow', String(Math.round(pct)));
+      }
+
+      function pctFromClientX(clientX) {
+        var rect = frame.getBoundingClientRect();
+        return ((clientX - rect.left) / rect.width) * 100;
+      }
+
+      var dragging = false;
+
+      function onPointerMove(e) {
+        if (!dragging) return;
+        setPosition(pctFromClientX(e.clientX));
+      }
+      function stopDragging() {
+        dragging = false;
+      }
+
+      frame.addEventListener('pointerdown', function (e) {
+        dragging = true;
+        handle.focus();
+        setPosition(pctFromClientX(e.clientX));
       });
+      window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointerup', stopDragging);
+      window.addEventListener('pointercancel', stopDragging);
+
+      handle.addEventListener('keydown', function (e) {
+        var current = parseFloat(handle.getAttribute('aria-valuenow')) || 50;
+        if (e.key === 'ArrowLeft') { setPosition(current - 5); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { setPosition(current + 5); e.preventDefault(); }
+        if (e.key === 'Home') { setPosition(0); e.preventDefault(); }
+        if (e.key === 'End') { setPosition(100); e.preventDefault(); }
+      });
+
+      setPosition(50);
     });
   }
 
