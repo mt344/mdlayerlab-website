@@ -124,9 +124,19 @@ button{font:inherit}
 .site-header.is-transparent .lang-opt{color:#fff}
 .site-header.is-transparent .lang-opt.is-active{background:rgba(255,255,255,.92);color:var(--navy-900)}
 .site-header.is-transparent .nav-toggle span{background:#fff}
-@media (max-width:900px){
-  .site-header.is-transparent .main-nav.is-open{background:var(--navy-900)}
+/* When the mobile menu is open, force the header solid so it stays readable
+   over the video/hero and the page never shows through the bar. */
+.site-header.nav-open{
+  background:rgba(255,255,255,.98);backdrop-filter:blur(10px);
+  border-bottom-color:var(--border);
 }
+.site-header.nav-open .brand-word{color:var(--navy-800)}
+.site-header.nav-open .brand-word em{color:var(--green-600)}
+.site-header.nav-open .nav-toggle span{background:var(--navy-800)}
+.site-header.nav-open .lang-opt{color:var(--ink-soft)}
+.site-header.nav-open .lang-opt.is-active{background:var(--navy-800);color:#fff}
+.site-header.nav-open .main-nav a{color:var(--ink)}
+.site-header.nav-open .main-nav a::after{background:var(--green-500)}
 .header-inner{display:flex;align-items:center;gap:var(--space-3);height:76px}
 .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--navy-800);margin-right:auto}
 .brand-mark{width:42px;height:42px;border-radius:10px;object-fit:cover}
@@ -156,13 +166,17 @@ button{font:inherit}
 .nav-toggle span{display:block;height:2px;background:var(--navy-800);border-radius:2px}
 
 @media (max-width:900px){
+  /* The header's backdrop-filter makes it the containing block for this
+     fixed menu, so we set an explicit height instead of relying on bottom:0
+     (which would collapse against the 76px-tall header). */
   .main-nav{
-    position:fixed;inset:76px 0 0 0;background:#fff;flex-direction:column;
-    padding:var(--space-4) var(--space-3);gap:var(--space-3);
+    position:fixed;top:76px;left:0;right:0;bottom:auto;height:calc(100dvh - 76px);
+    background:#fff;flex-direction:column;justify-content:center;
+    padding:var(--space-4) var(--space-3) var(--space-6);gap:var(--space-4);
     transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;
   }
   .main-nav.is-open{opacity:1;transform:translateY(0);pointer-events:auto}
-  .main-nav a{font-size:1.1rem}
+  .main-nav a{font-size:1.3rem;color:var(--ink)}
   .nav-toggle{display:flex}
   .header-wa{display:none}
 }
@@ -222,11 +236,14 @@ body.no-js .intro{display:none}
 .hero-trust-light li{color:rgba(255,255,255,.88)}
 
 .hero-scroll-cue{
-  position:absolute;left:50%;bottom:2.2rem;transform:translateX(-50%);z-index:1;
+  position:absolute;left:50%;bottom:2.2rem;transform:translateX(-50%);z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:.3rem;
   color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
   opacity:.85;animation:scrollCueBounce 2s ease-in-out infinite;
 }
+.hero-scroll-cue:hover{opacity:1}
+.hero-scroll-cue:focus-visible{outline:2px solid #fff;outline-offset:6px;border-radius:8px}
 .hero-scroll-cue .icon{width:1.3em;height:1.3em}
 @keyframes scrollCueBounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
@@ -285,6 +302,15 @@ body.no-js .intro{display:none}
   padding:.3rem .7rem;border-radius:999px;font-size:.78rem;font-weight:700;color:var(--ink-soft);
 }
 .tab-panel-desc{color:var(--ink-soft);margin-bottom:var(--space-3)}
+
+.materials-note{
+  display:flex;align-items:flex-start;gap:.6rem;
+  margin-top:var(--space-4);padding:.9rem 1.1rem;
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-m);
+  color:var(--ink-soft);font-size:.9rem;line-height:1.5;
+}
+.materials-note svg{width:1.25rem;height:1.25rem;color:var(--green-600);flex:none;margin-top:.05rem}
+.materials-note strong{color:var(--navy-800);font-weight:700}
 
 .material-group{margin-bottom:var(--space-4)}
 .material-group:last-child{margin-bottom:0}
@@ -370,7 +396,14 @@ body.no-js .intro{display:none}
 .showcase-card figcaption{
   padding:.9rem 1.1rem 1.05rem;font-weight:600;font-size:.92rem;color:var(--navy-800);
   border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;
+  display:flex;align-items:center;justify-content:space-between;gap:.4rem .6rem;flex-wrap:wrap;
+}
+.showcase-material{
+  flex-basis:100%;font-weight:600;font-size:.76rem;color:var(--green-600);
+  display:inline-flex;align-items:center;gap:.4rem;
+}
+.showcase-material::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--green-500);flex:none;
 }
 
 /* Before/after drag-slider for the helmet mount */

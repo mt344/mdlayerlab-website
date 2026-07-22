@@ -77,7 +77,7 @@
       <div class="hero-scrim" aria-hidden="true"></div>
 
       <div class="wrap hero-content">
-        <p class="eyebrow" data-i18n="hero.eyebrow">3D-Druck-Studio für Privatpersonen</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">3D-Druck-Studio für Privatpersonen &amp; Firmen</p>
         <h1 data-i18n="hero.title">Deine Idee.<br>Schicht für Schicht<br><span class="accent-text">Wirklichkeit.</span></h1>
         <p class="lede" data-i18n="hero.lede">Du hast ein Problem, eine Vorstellung oder eine Lücke in der Wohnung, die genau ein Teil füllen könnte? Wir designen es gemeinsam mit dir und drucken es – in nahezu jeder Farbe, die du dir wünschst.</p>
         <div class="hero-cta">
@@ -86,15 +86,15 @@
         </div>
         <ul class="hero-trust hero-trust-light">
           <li data-i18n="hero.trust1">Eigenes Design &amp; Beratung</li>
-          <li data-i18n="hero.trust2">Gedruckt mit Bambu-Lab-Technologie</li>
+          <li data-i18n="hero.trust2">3D-gedruckt in Profi-Qualität</li>
           <li data-i18n="hero.trust3">Farbe frei wählbar</li>
         </ul>
       </div>
 
-      <div class="hero-scroll-cue" aria-hidden="true">
+      <a class="hero-scroll-cue" href="#leistungen" aria-label="Nach unten scrollen">
         <span data-i18n="hero.scroll">Scrollen</span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -153,6 +153,11 @@
       <div class="tab-list" role="tablist" aria-label="Materialien" id="tabList"></div>
       <div class="tab-panels" id="tabPanels"></div>
     </div>
+
+    <p class="materials-note">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 6.5L12 11l8-4.5M12 11v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span data-i18n="materials.stock"><strong>Alle Farben aus dem Katalog haben wir auf Lager.</strong> Du brauchst einen anderen Ton? Nahezu jede weitere Farbe ist auf Anfrage möglich – sprich uns einfach an.</span>
+    </p>
   </div>
 </section>
 
@@ -195,32 +200,45 @@
         <figcaption>
           <span data-i18n="gallery.helm">Helmhalter für die Wand</span>
           <span class="compare-hint" data-i18n="gallery.helmHint">Schieben: ohne ↔ mit Helm</span>
+          <span class="showcase-material" data-i18n="gallery.helmMat">Gedruckt in PETG CF</span>
         </figcaption>
       </figure>
 
       <figure class="showcase-card">
-        <picture><source srcset="assets/img/gallery/printer-ams.webp" type="image/webp"><img src="assets/img/gallery/printer-ams.jpg" alt="Bambu Lab 3D-Drucker mit AMS und mehreren Filamentfarben" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.printer">So entsteht dein Projekt – in deiner Wunschfarbe</figcaption>
+        <picture><source srcset="assets/img/gallery/printer-ams.webp" type="image/webp"><img src="assets/img/gallery/printer-ams.jpg" alt="3D-Drucker mit automatischem Farbsystem und mehreren Filamentfarben" loading="lazy"></picture>
+        <figcaption><span data-i18n="gallery.printer">So entsteht dein Projekt – in deiner Wunschfarbe</span></figcaption>
       </figure>
 
       <figure class="showcase-card">
         <picture><source srcset="assets/img/gallery/haarwerk.webp" type="image/webp"><img src="assets/img/gallery/haarwerk.jpg" alt="Visitenkarten-Halter für einen Friseursalon" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.haarwerk">Visitenkartenhalter für einen Friseursalon</figcaption>
+        <figcaption>
+          <span data-i18n="gallery.haarwerk">Visitenkartenhalter für einen Friseursalon</span>
+          <span class="showcase-material" data-i18n="gallery.haarwerkMat">Gedruckt in Sakura Pink &amp; Weiß</span>
+        </figcaption>
       </figure>
 
       <figure class="showcase-card">
         <picture><source srcset="assets/img/gallery/sphere.webp" type="image/webp"><img src="assets/img/gallery/sphere.jpg" alt="Gerippte Deko-Kugel" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.sphere">Deko-Objekt, Rippen-Optik</figcaption>
+        <figcaption>
+          <span data-i18n="gallery.sphere">Deko-Objekt, Rippen-Optik</span>
+          <span class="showcase-material" data-i18n="gallery.sphereMat">Gedruckt in Grey</span>
+        </figcaption>
       </figure>
 
       <figure class="showcase-card">
         <picture><source srcset="assets/img/gallery/bunny-halter.webp" type="image/webp"><img src="assets/img/gallery/bunny-halter.jpg" alt="Hasenförmiger Handyhalter" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.bunny">Handyhalter, individuell designt</figcaption>
+        <figcaption>
+          <span data-i18n="gallery.bunny">Handyhalter, individuell designt</span>
+          <span class="showcase-material" data-i18n="gallery.bunnyMat">Gedruckt in Jade White &amp; Grau</span>
+        </figcaption>
       </figure>
 
       <figure class="showcase-card">
         <picture><source srcset="assets/img/gallery/blumen-vasen.webp" type="image/webp"><img src="assets/img/gallery/blumen-vasen.jpg" alt="Deko-Blumensträuße als Buchstützen" loading="lazy"></picture>
-        <figcaption data-i18n="gallery.blumen">Deko-Buchstützen mit Blumenmotiv</figcaption>
+        <figcaption>
+          <span data-i18n="gallery.blumen">Deko-Buchstützen mit Blumenmotiv</span>
+          <span class="showcase-material" data-i18n="gallery.blumenMat">Gedruckt in Caramel</span>
+        </figcaption>
       </figure>
 
     </div>

@@ -41,18 +41,30 @@
   function initNav() {
     var toggle = document.getElementById('navToggle');
     var nav = document.getElementById('mainNav');
+    var header = document.getElementById('siteHeader');
     if (!toggle || !nav) return;
 
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+    function setOpen(open) {
+      nav.classList.toggle('is-open', open);
+      if (header) header.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('is-open'));
     });
 
     nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+
+    // Close the menu on Escape and when leaving mobile width.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) setOpen(false);
+    });
+    window.matchMedia('(min-width:901px)').addEventListener('change', function (e) {
+      if (e.matches) setOpen(false);
     });
   }
 
@@ -402,13 +414,13 @@
       'nav.process': 'Process',
       'nav.contact': 'Contact',
 
-      'hero.eyebrow': '3D printing studio for private customers',
+      'hero.eyebrow': '3D printing studio for private & business customers',
       'hero.title': 'Your idea.<br>Built layer<br>by <span class="accent-text">layer.</span>',
       'hero.lede': 'Got a problem, a vision, or a gap in your home that exactly one part could fill? We design it together with you and print it — in almost any colour you like.',
       'hero.ctaPrimary': 'Send a request',
       'hero.ctaSecondary': 'See projects',
       'hero.trust1': 'In-house design & advice',
-      'hero.trust2': 'Printed with Bambu Lab technology',
+      'hero.trust2': '3D-printed in pro quality',
       'hero.trust3': 'Any colour you like',
       'hero.chip1': 'From idea to object',
       'hero.chip2': 'In your favourite colour',
@@ -429,17 +441,23 @@
       'materials.eyebrow': 'Materials',
       'materials.title': 'The right material for your project',
       'materials.lede': "Every material has its strengths. Pick a material to see all matching colours — or browse every colour at a glance. Click any colour for details.",
+      'materials.stock': '<strong>Every colour in the catalogue is in stock.</strong> Need a different shade? Almost any other colour is available on request — just get in touch.',
 
       'gallery.eyebrow': 'Gallery',
       'gallery.title': 'Selected projects',
       'gallery.lede': "A small look at what's already come off our printer.",
       'gallery.helm': 'Wall-mounted helmet holder',
       'gallery.helmHint': 'Drag: without ↔ with helmet',
+      'gallery.helmMat': 'Printed in PETG CF',
       'gallery.printer': 'How your project comes to life — in your favourite colour',
       'gallery.haarwerk': 'Business card holder for a hair salon',
+      'gallery.haarwerkMat': 'Printed in Sakura Pink & White',
       'gallery.sphere': 'Decor piece, ribbed finish',
+      'gallery.sphereMat': 'Printed in Grey',
       'gallery.bunny': 'Custom-designed phone stand',
+      'gallery.bunnyMat': 'Printed in Jade White & Grey',
       'gallery.blumen': 'Decorative bookends with a floral motif',
+      'gallery.blumenMat': 'Printed in Caramel',
 
       'process.eyebrow': 'Process',
       'process.title': 'This is how easy it is to get your object',
