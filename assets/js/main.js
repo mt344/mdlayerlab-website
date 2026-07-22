@@ -218,7 +218,23 @@
       colors: [
         { name: { de: 'White', en: 'White' }, hex: '#F2F2EE', img: 'vase-white', desc: { de: 'Klares, deckendes Weiß – sauber, neutral und vielseitig.', en: 'Clear, opaque white — clean, neutral and versatile.' } },
         { name: { de: 'Clear', en: 'Clear' }, hex: 'clear', img: 'petg-clear', desc: { de: 'Transparent mit leichter Trübung – ideal für Lichtdurchlässigkeit.', en: 'Transparent with a slight haze — ideal when light needs to pass through.' } },
-        { name: { de: 'Light Gray', en: 'Light Gray' }, hex: '#B7BBC2', img: 'vase-grey', desc: { de: 'Helles Grau – modern, technisch und unauffällig elegant.', en: 'Light grey — modern, technical and quietly elegant.' } }
+        { name: { de: 'Light Gray', en: 'Light Gray' }, hex: '#B7BBC2', img: 'vase-grey', desc: { de: 'Helles Grau – modern, technisch und unauffällig elegant.', en: 'Light grey — modern, technical and quietly elegant.' } },
+        { name: { de: 'PETG CF (Carbon)', en: 'PETG CF (Carbon)' }, hex: '#1B1C1E', img: 'petg-cf', desc: { de: 'Mit Carbonfasern verstärktes PETG – deutlich härter, steifer und formstabiler als normales PETG. Edles, tiefschwarzes Mattfinish mit feiner Carbon-Textur. Ideal für belastbare, technische Teile und hochwertige Deko.', en: 'Carbon-fibre reinforced PETG — noticeably harder, stiffer and more dimensionally stable than standard PETG. A premium deep-black matte finish with a fine carbon texture. Ideal for load-bearing technical parts and high-end decor.' } }
+      ]
+    },
+    {
+      id: 'asa',
+      tab: { de: 'ASA', en: 'ASA' },
+      name: { de: 'ASA', en: 'ASA' },
+      tagline: { de: 'Wetterfest & UV-stabil', en: 'Weatherproof & UV-stable' },
+      price: 'ca. 0,32–0,42 €/cm³',
+      desc: {
+        de: 'Besonders witterungsbeständiger Kunststoff, der auch bei dauerhafter Sonne und Nässe nicht ausbleicht oder versprödet. Hitzebeständiger und robuster als PLA und PETG – die erste Wahl für Teile im Außenbereich wie Halterungen, Schilder oder Zubehör für Garten und Fahrzeug.',
+        en: 'A highly weather-resistant plastic that won’t fade or become brittle under constant sun and rain. More heat-resistant and robust than PLA and PETG — the first choice for outdoor parts like mounts, signs or garden and vehicle accessories.'
+      },
+      colors: [
+        { name: { de: 'White', en: 'White' }, hex: '#F2F2EE', img: 'asa-white', desc: { de: 'Reines, deckendes Weiß – sauber und wetterfest für den Außeneinsatz.', en: 'Pure, opaque white — clean and weatherproof for outdoor use.' } },
+        { name: { de: 'Black', en: 'Black' }, hex: '#161618', img: 'asa-black', desc: { de: 'Tiefes Schwarz mit robuster Oberfläche – UV-stabil und langlebig, auch bei dauerhafter Sonne.', en: 'Deep black with a robust surface — UV-stable and durable, even under constant sun.' } }
       ]
     },
     {
