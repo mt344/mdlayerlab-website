@@ -356,9 +356,12 @@ body.no-js .intro{display:none}
 }
 .color-dialog::backdrop{background:rgba(7,15,30,.55);backdrop-filter:blur(2px)}
 .color-dialog-swatch{
-  height:150px;background-size:cover;background-position:center;background-color:var(--bg-soft);
+  aspect-ratio:1/1;max-height:56vh;
+  background-size:contain;background-repeat:no-repeat;background-position:center;
+  background-color:#efeee9;
 }
 .color-dialog-swatch.is-clear{
+  aspect-ratio:auto;height:150px;
   background-color:#fafcf9;
   background-image:repeating-linear-gradient(45deg, rgba(15,24,38,.07) 0 3px, transparent 3px 14px);
 }
