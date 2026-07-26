@@ -181,6 +181,8 @@
         { name: { de: 'Lavender Purple', en: 'Lavender Purple' }, hex: '#A995D9', img: 'vase-purple', desc: { de: 'Sanftes Violett – elegant und verspielt.', en: 'Gentle purple — elegant and playful.' } },
         { name: { de: 'Pastellblau', en: 'Pastel Blue' }, hex: '#B6D3EC', img: 'pastellblau', desc: { de: 'Helles Blau – weich und beruhigend.', en: 'Light blue — soft and calming.' } },
         { name: { de: 'Sapphire Blue', en: 'Sapphire Blue' }, hex: '#2E6BDD', img: 'sapphire-blue', desc: { de: 'Kräftiges Blau – modern und ausdrucksstark.', en: 'Bold blue — modern and expressive.' } },
+        { name: { de: 'Rot', en: 'Red' }, hex: '#D51F26', img: 'red', desc: { de: 'Kräftiges, sattes Rot – warm, lebendig und ein echter Blickfang für Deko und Geschenke.', en: 'Bold, rich red — warm, vivid and a real eye-catcher for decor and gifts.' } },
+        { name: { de: 'Gelb', en: 'Yellow' }, hex: '#F4C400', img: 'yellow', desc: { de: 'Leuchtendes, sonniges Gelb – fröhlich, energiegeladen und kaum zu übersehen.', en: 'Bright, sunny yellow — cheerful, energetic and impossible to miss.' } },
         { name: { de: 'Charcoal Black', en: 'Charcoal Black' }, hex: '#19191B', img: 'vase-black', desc: { de: 'Dunkles Graphitschwarz – modern und technisch.', en: 'Dark graphite black — modern and technical.' } }
       ]
     },
@@ -485,8 +487,8 @@
       'gallery.sphereMat': 'Printed in Grey',
       'gallery.bunny': 'Custom-designed phone stand',
       'gallery.bunnyMat': 'Printed in Jade White & Grey',
-      'gallery.blumen': 'Decorative bookends with a floral motif',
-      'gallery.blumenMat': 'Printed in Caramel',
+      'gallery.porsche': 'Porsche decor model with display',
+      'gallery.porscheMat': 'Available in Red, Yellow, Black & Caramel',
 
       'process.eyebrow': 'Process',
       'process.title': 'This is how easy it is to get your object',
