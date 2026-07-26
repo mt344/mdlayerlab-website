@@ -488,7 +488,7 @@
       'gallery.bunny': 'Custom-designed phone stand',
       'gallery.bunnyMat': 'Printed in Jade White & Grey',
       'gallery.porsche': 'Porsche decor model with display',
-      'gallery.porscheMat': 'Available in Red, Yellow, Black & Caramel',
+      'gallery.porscheMat': 'Printed in Red, Yellow, Black & Caramel',
 
       'process.eyebrow': 'Process',
       'process.title': 'This is how easy it is to get your object',
