@@ -480,7 +480,8 @@
       'gallery.helm': 'Wall-mounted helmet holder',
       'gallery.helmHint': 'Drag: without ↔ with helmet',
       'gallery.helmMat': 'Printed in PETG CF',
-      'gallery.printer': 'How your project comes to life — in your favourite colour',
+      'gallery.cotton': 'Bathroom organizer',
+      'gallery.cottonMat': 'Printed in White',
       'gallery.haarwerk': 'Business card holder for a hair salon',
       'gallery.haarwerkMat': 'Printed in Sakura Pink & White',
       'gallery.sphere': 'Decor piece, ribbed finish',
@@ -603,6 +604,20 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------------- Click-to-play product video cards ---------------- */
+  function initVideoCards() {
+    document.querySelectorAll('.video-play-frame').forEach(function (frame) {
+      var video = frame.querySelector('video');
+      if (!video) return;
+      frame.addEventListener('click', function () {
+        if (frame.classList.contains('is-playing')) return;
+        frame.classList.add('is-playing');
+        video.currentTime = 0;
+        video.play().catch(function () {});
+      });
+    });
+  }
+
   /* ---------------- Before/after drag-slider (helmet holder) ---------------- */
   function initCompareCards() {
     document.querySelectorAll('.showcase-compare').forEach(function (card) {
@@ -660,6 +675,7 @@
     initHeroVideo();
     initColorDialog();
     initCompareCards();
+    initVideoCards();
     initLanguage(); // also triggers first renderMaterials()
     initYear();
   });

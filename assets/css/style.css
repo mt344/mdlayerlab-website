@@ -409,6 +409,29 @@ body.no-js .intro{display:none}
   content:"";width:6px;height:6px;border-radius:50%;background:var(--green-500);flex:none;
 }
 
+/* Click-to-play product video card */
+.video-play-frame{
+  position:relative;display:block;width:100%;padding:0;margin:0;border:none;
+  background:none;cursor:pointer;
+}
+.video-play-frame picture,
+.video-play-frame img{width:100%;height:auto;display:block;transition:opacity .2s ease}
+.video-play-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:64px;height:64px;border-radius:50%;background:rgba(13,27,48,.82);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-pop);transition:transform .18s ease, background-color .18s ease;
+}
+.video-play-btn .icon{width:26px;height:26px;margin-left:3px}
+.video-play-frame:hover .video-play-btn{transform:translate(-50%,-50%) scale(1.08);background:var(--navy-900)}
+.video-play-frame video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;pointer-events:none;
+}
+.video-play-frame.is-playing picture,
+.video-play-frame.is-playing .video-play-btn{opacity:0;pointer-events:none}
+.video-play-frame.is-playing video{opacity:1;pointer-events:auto}
+
 /* Before/after drag-slider for the helmet mount */
 .showcase-compare .compare-frame{
   position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-soft);
