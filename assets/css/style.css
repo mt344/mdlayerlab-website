@@ -409,28 +409,42 @@ body.no-js .intro{display:none}
   content:"";width:6px;height:6px;border-radius:50%;background:var(--green-500);flex:none;
 }
 
-/* Click-to-play product video card */
-.video-play-frame{
-  position:relative;display:block;width:100%;padding:0;margin:0;border:none;
-  background:none;cursor:pointer;
-}
+/* Click-to-play product video card, with pause + return-to-photo controls */
+.video-play-frame{position:relative;width:100%}
 .video-play-frame picture,
 .video-play-frame img{width:100%;height:auto;display:block;transition:opacity .2s ease}
-.video-play-btn{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:64px;height:64px;border-radius:50%;background:rgba(13,27,48,.82);
-  color:#fff;display:flex;align-items:center;justify-content:center;
-  box-shadow:var(--shadow-pop);transition:transform .18s ease, background-color .18s ease;
-}
-.video-play-btn .icon{width:26px;height:26px;margin-left:3px}
-.video-play-frame:hover .video-play-btn{transform:translate(-50%,-50%) scale(1.08);background:var(--navy-900)}
 .video-play-frame video{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   opacity:0;pointer-events:none;
 }
-.video-play-frame.is-playing picture,
-.video-play-frame.is-playing .video-play-btn{opacity:0;pointer-events:none}
-.video-play-frame.is-playing video{opacity:1;pointer-events:auto}
+.video-play-frame.is-active picture{opacity:0}
+.video-play-frame.is-active video{opacity:1;pointer-events:auto}
+
+.video-toggle-btn{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:64px;height:64px;border-radius:50%;background:rgba(13,27,48,.82);border:none;
+  color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  box-shadow:var(--shadow-pop);transition:transform .18s ease, background-color .18s ease, opacity .18s ease;
+}
+.video-toggle-btn .icon{width:26px;height:26px}
+.video-toggle-btn .icon-play{margin-left:3px}
+.video-toggle-btn .icon-pause{display:none}
+.video-play-frame:hover .video-toggle-btn{transform:translate(-50%,-50%) scale(1.08);background:var(--navy-900)}
+/* While actively playing, swap the icon and fade the button back on hover only,
+   so it doesn't sit on top of the video the whole time. */
+.video-play-frame.is-playing .video-toggle-btn{opacity:0}
+.video-play-frame.is-playing:hover .video-toggle-btn{opacity:1}
+.video-play-frame.is-playing .icon-play{display:none}
+.video-play-frame.is-playing .icon-pause{display:block}
+
+.video-close-btn{
+  position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;
+  background:rgba(13,27,48,.75);border:none;color:#fff;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;pointer-events:none;transition:opacity .18s ease, background-color .18s ease;
+}
+.video-close-btn .icon{width:16px;height:16px}
+.video-close-btn:hover{background:var(--navy-900)}
+.video-play-frame.is-active .video-close-btn{opacity:1;pointer-events:auto}
 
 /* Before/after drag-slider for the helmet mount */
 .showcase-compare .compare-frame{
