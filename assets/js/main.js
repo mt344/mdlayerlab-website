@@ -513,9 +513,12 @@
       'form.idea': 'What do you have in mind?',
       'form.ideaPh': 'e.g. a decorative vase for the living room, a spare part for ...',
       'form.problem': 'What does the problem / object look like?',
-      'form.problemPh': 'Describe shape and function, or send a photo by email afterwards',
+      'form.problemPh': 'Describe the shape or function',
       'form.size': 'Approximate size',
       'form.sizePh': 'e.g. approx. 10 x 10 x 15 cm',
+      'form.photos': 'Photos (optional)',
+      'form.photosCta': 'Choose photos or drag them here',
+      'form.photosHint': 'Up to 10 MB total',
       'form.submit': 'Send request',
       'form.note': "We'll get back to you by email as soon as possible.",
 
@@ -695,6 +698,69 @@
     });
   }
 
+  /* ---------------- Contact form photo upload ---------------- */
+  function initFileUpload() {
+    var drop = document.getElementById('fileDrop');
+    var input = document.getElementById('f-photos');
+    var list = document.getElementById('fileList');
+    if (!drop || !input || !list) return;
+
+    var MAX_TOTAL = 10 * 1024 * 1024; // FormSubmit's combined attachment limit
+
+    function formatSize(bytes) {
+      if (bytes < 1024 * 1024) return Math.max(1, Math.round(bytes / 1024)) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+
+    function render() {
+      var files = Array.from(input.files || []);
+      list.innerHTML = '';
+      var total = files.reduce(function (sum, f) { return sum + f.size; }, 0);
+      var overLimit = total > MAX_TOTAL;
+      list.classList.toggle('has-error', overLimit);
+
+      files.forEach(function (file) {
+        var li = document.createElement('li');
+        var name = document.createElement('span');
+        name.textContent = file.name;
+        var size = document.createElement('em');
+        size.textContent = formatSize(file.size);
+        li.appendChild(name);
+        li.appendChild(size);
+        list.appendChild(li);
+      });
+
+      if (overLimit) {
+        var warn = document.createElement('li');
+        warn.textContent = currentLang === 'en'
+          ? 'Total over 10 MB — please remove a photo or two.'
+          : 'Zusammen über 10 MB — bitte ein paar Fotos entfernen.';
+        list.appendChild(warn);
+      }
+    }
+
+    input.addEventListener('change', render);
+
+    ['dragenter', 'dragover'].forEach(function (evt) {
+      drop.addEventListener(evt, function (e) {
+        e.preventDefault();
+        drop.classList.add('is-dragover');
+      });
+    });
+    ['dragleave', 'drop'].forEach(function (evt) {
+      drop.addEventListener(evt, function (e) {
+        e.preventDefault();
+        drop.classList.remove('is-dragover');
+      });
+    });
+    drop.addEventListener('drop', function (e) {
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+        input.files = e.dataTransfer.files;
+        render();
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     runIntro();
     initNav();
@@ -702,6 +768,7 @@
     initColorDialog();
     initCompareCards();
     initVideoCards();
+    initFileUpload();
     initLanguage(); // also triggers first renderMaterials()
     initYear();
   });

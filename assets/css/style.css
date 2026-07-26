@@ -519,6 +519,31 @@ body.no-js .intro{display:none}
 .form-note{font-size:.82rem;color:var(--ink-soft);text-align:center;margin:0}
 .hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
+.file-drop{
+  position:relative;border:1.5px dashed var(--border);border-radius:var(--radius-s);
+  background:var(--bg-soft);padding:1.4rem 1rem;text-align:center;
+  transition:border-color .15s ease, background .15s ease;
+}
+.file-drop.is-dragover{border-color:var(--green-500);background:var(--green-100)}
+.file-drop input[type="file"]{
+  position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;
+  padding:0;border:none;background:none;
+}
+.file-drop-inner{display:flex;flex-direction:column;align-items:center;gap:.3rem;color:var(--ink-soft);pointer-events:none}
+.file-drop-inner .icon{width:24px;height:24px;color:var(--green-600)}
+.file-drop-text{font-weight:700;font-size:.88rem;color:var(--navy-800)}
+.file-drop-hint{font-size:.76rem}
+.file-list{list-style:none;margin:.6rem 0 0;padding:0;display:flex;flex-direction:column;gap:.35rem}
+.file-list:empty{margin:0}
+.file-list li{
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-s);
+  padding:.5rem .7rem;font-size:.82rem;color:var(--ink);
+}
+.file-list li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-list li em{font-style:normal;color:var(--ink-soft);flex:none;font-size:.76rem}
+.file-list.has-error li{border-color:#e0664a;color:#a7402a}
+
 /* ============ Footer ============ */
 .site-footer{background:var(--navy-900);color:#cfd6e2;padding:var(--space-5) 0}
 .footer-inner{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);justify-content:space-between}

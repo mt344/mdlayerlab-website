@@ -317,7 +317,7 @@
       </a>
     </div>
 
-    <form class="kontakt-form" id="kontaktForm" action="https://formsubmit.co/mdlayerlab@outlook.com" method="POST">
+    <form class="kontakt-form" id="kontaktForm" action="https://formsubmit.co/mdlayerlab@outlook.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Neue Anfrage über die Website">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -340,12 +340,25 @@
 
       <div class="form-row">
         <label for="f-problem" data-i18n="form.problem">Wie sieht das Problem / Objekt aus?</label>
-        <textarea id="f-problem" name="Beschreibung des Problems / Objekts" rows="3" data-i18n-ph="form.problemPh" placeholder="Beschreibe Form, Funktion oder füge ein Foto per E-Mail nach"></textarea>
+        <textarea id="f-problem" name="Beschreibung des Problems / Objekts" rows="3" data-i18n-ph="form.problemPh" placeholder="Beschreibe Form oder Funktion"></textarea>
       </div>
 
       <div class="form-row">
         <label for="f-size" data-i18n="form.size">Ungefähre Größe</label>
         <input id="f-size" name="Größe" type="text" data-i18n-ph="form.sizePh" placeholder="z. B. ca. 10 x 10 x 15 cm">
+      </div>
+
+      <div class="form-row">
+        <label for="f-photos" data-i18n="form.photos">Fotos (optional)</label>
+        <div class="file-drop" id="fileDrop">
+          <input id="f-photos" name="attachment" type="file" accept="image/*" multiple>
+          <div class="file-drop-inner">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M12 16V4m0 0L7 9m5-5l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="file-drop-text" data-i18n="form.photosCta">Fotos auswählen oder hierher ziehen</span>
+            <span class="file-drop-hint" data-i18n="form.photosHint">Bis zu 10 MB insgesamt</span>
+          </div>
+        </div>
+        <ul class="file-list" id="fileList" aria-live="polite"></ul>
       </div>
 
       <button type="submit" class="btn btn-primary btn-block" data-i18n="form.submit">Anfrage absenden</button>
