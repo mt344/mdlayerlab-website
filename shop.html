@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop – MD Layer Lab</title>
+<meta name="description" content="Unser Online-Shop entsteht gerade. Bald kannst du 3D-gedruckte Deko und individuelle Objekte direkt bei uns bestellen.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/brand/logo.jpg" alt="MD Layer Lab Logo" class="brand-mark">
+      <span class="brand-word">MD <em>Layer</em> Lab</span>
+    </a>
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Sprache wechseln / Switch language">
+        <span class="lang-opt is-active" data-lang-opt="de">DE</span>
+        <span class="lang-opt" data-lang-opt="en">EN</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="coming-soon">
+    <div class="wrap coming-soon-inner">
+      <p class="eyebrow" data-i18n="shop.eyebrow">Shop</p>
+      <h1 data-i18n="shop.title">Wir arbeiten daran.</h1>
+      <p class="lede" data-i18n="shop.lede">Bald kannst du hier ausgewählte Deko-Objekte und Designs direkt bestellen — fertig gedruckt in deiner Wunschfarbe. Bis es so weit ist, erreichst du uns ganz normal über unser Anfrageformular.</p>
+      <div class="coming-soon-cta">
+        <a href="index.html#kontakt" class="btn btn-primary" data-i18n="shop.ctaPrimary">Anfrage stellen</a>
+        <a href="index.html" class="btn btn-ghost" data-i18n="shop.ctaSecondary">Zur Startseite</a>
+      </div>
+      <p class="coming-soon-badge" data-i18n="shop.badge">Coming soon</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/brand/logo.jpg" alt="MD Layer Lab Logo" class="brand-mark">
+      <p data-i18n="footer.tagline">3D-Druck-Studio für individuelle Ideen &amp; Deko.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> MD Layer Lab</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var translations = {
+  'shop.eyebrow': 'Shop',
+  'shop.title': "We're working on it.",
+  'shop.lede': "Soon you'll be able to order selected decor pieces and designs directly here — printed and shipped in your favourite colour. Until then, just reach us through our regular request form.",
+  'shop.ctaPrimary': 'Send a request',
+  'shop.ctaSecondary': 'Back to homepage',
+  'shop.badge': 'Coming soon',
+  'nav.services': 'Services', 'nav.materials': 'Materials', 'nav.gallery': 'Gallery',
+  'nav.process': 'Process', 'nav.contact': 'Contact',
+  'footer.tagline': '3D printing studio for custom ideas & decor.',
+  'footer.impressum': 'Legal notice', 'footer.privacy': 'Privacy'
+};
+var defaults = {};
+document.querySelectorAll('[data-i18n]').forEach(function (el) {
+  defaults[el.getAttribute('data-i18n')] = el.innerHTML;
+});
+var toggle = document.getElementById('langToggle');
+var stored = null;
+try { stored = localStorage.getItem('mdlayerlab-lang'); } catch (e) {}
+
+function applyLang(lang) {
+  var isEn = lang === 'en';
+  document.documentElement.lang = isEn ? 'en' : 'de';
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    el.innerHTML = isEn && translations[key] ? translations[key] : defaults[key];
+  });
+  document.querySelectorAll('.lang-opt').forEach(function (opt) {
+    opt.classList.toggle('is-active', opt.getAttribute('data-lang-opt') === lang);
+  });
+  try { localStorage.setItem('mdlayerlab-lang', lang); } catch (e) {}
+}
+if (stored === 'en') applyLang('en');
+toggle.addEventListener('click', function () {
+  applyLang(document.documentElement.lang === 'de' ? 'en' : 'de');
+});
+</script>
+</body>
+</html>

@@ -153,6 +153,12 @@ button{font:inherit}
   transform:scaleX(0);transition:transform .2s ease;transform-origin:left;
 }
 .main-nav a:hover::after{transform:scaleX(1)}
+.nav-shop-link{display:inline-flex !important;align-items:center;gap:.35rem}
+.nav-shop-link em{
+  font-style:normal;background:var(--green-500);color:var(--navy-900);
+  font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+  padding:.15rem .4rem;border-radius:999px;line-height:1;
+}
 
 .header-actions{display:flex;align-items:center;gap:.9rem}
 .lang-toggle{
@@ -525,3 +531,19 @@ body.no-js .intro{display:none}
 .legal p,.legal li{color:var(--ink-soft)}
 .legal a{color:var(--navy-800);text-decoration:underline}
 .back-link{display:inline-block;margin-bottom:var(--space-3);font-weight:600;text-decoration:none;color:var(--navy-800)}
+
+/* ============ Coming soon (shop) ============ */
+.coming-soon{
+  min-height:calc(100dvh - 77px);display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(120% 100% at 50% 0%, var(--bg-soft), #fff 60%);
+  padding:var(--space-6) 0;
+}
+.coming-soon-inner{max-width:640px;margin:0 auto;text-align:center}
+.coming-soon h1{font-size:clamp(2rem,5vw,3rem)}
+.coming-soon .lede{color:var(--ink-soft);font-size:1.05rem;max-width:52ch;margin-left:auto;margin-right:auto}
+.coming-soon-cta{display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;margin:var(--space-4) 0}
+.coming-soon-badge{
+  display:inline-block;margin:0;padding:.5rem 1.1rem;border-radius:999px;
+  background:var(--navy-800);color:var(--green-500);font-weight:700;font-size:.8rem;
+  letter-spacing:.06em;text-transform:uppercase;
+}

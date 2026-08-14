@@ -444,6 +444,8 @@
       'nav.gallery': 'Gallery',
       'nav.process': 'Process',
       'nav.contact': 'Contact',
+      'nav.shop': 'Shop',
+      'nav.shopBadge': 'soon',
 
       'hero.eyebrow': '3D printing studio for private & business customers',
       'hero.title': 'Your idea.<br>Built layer<br>by <span class="accent-text">layer.</span>',
