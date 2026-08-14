@@ -607,46 +607,6 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
-  /* ---------------- Click-to-play product video cards (pause + return-to-photo) ---------------- */
-  function initVideoCards() {
-    document.querySelectorAll('.video-play-frame').forEach(function (frame) {
-      var video = frame.querySelector('video');
-      var toggleBtn = frame.querySelector('.video-toggle-btn');
-      var closeBtn = frame.querySelector('.video-close-btn');
-      if (!video || !toggleBtn) return;
-
-      video.addEventListener('play', function () {
-        frame.classList.add('is-playing');
-        toggleBtn.setAttribute('aria-label', 'Video pausieren');
-      });
-      video.addEventListener('pause', function () {
-        frame.classList.remove('is-playing');
-        toggleBtn.setAttribute('aria-label', 'Video abspielen');
-      });
-
-      toggleBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (!frame.classList.contains('is-active')) {
-          frame.classList.add('is-active');
-        }
-        if (video.paused) {
-          video.play().catch(function () {});
-        } else {
-          video.pause();
-        }
-      });
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          video.pause();
-          video.currentTime = 0;
-          frame.classList.remove('is-active');
-        });
-      }
-    });
-  }
-
   /* ---------------- Before/after drag-slider (helmet holder) ---------------- */
   function initCompareCards() {
     document.querySelectorAll('.showcase-compare').forEach(function (card) {
@@ -767,7 +727,6 @@
     initHeroVideo();
     initColorDialog();
     initCompareCards();
-    initVideoCards();
     initFileUpload();
     initLanguage(); // also triggers first renderMaterials()
     initYear();
