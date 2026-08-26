@@ -47,6 +47,7 @@
     function setOpen(open) {
       nav.classList.toggle('is-open', open);
       if (header) header.classList.toggle('nav-open', open);
+      document.documentElement.classList.toggle('scroll-locked', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
     }
@@ -471,6 +472,17 @@
       'services.card4.title': 'Prototypes & businesses',
       'services.card4.text': 'Also for companies: functional prototypes, small batches, or custom promotional and gift items for clients and staff.',
 
+      'business.eyebrow': 'For businesses',
+      'business.title': 'Tailored solutions for demanding projects',
+      'business.lede': "From the first sketch to a finished small batch: we develop prototypes, custom pieces, and representative objects for companies that value precision, discretion, and a personal point of contact.",
+      'business.card1.title': 'A dedicated point of contact',
+      'business.card1.text': "One person sees your project through from first enquiry to delivery — not an anonymous order form.",
+      'business.card2.title': 'Prototyping & small batches',
+      'business.card2.text': 'From a single functional part to a repeatable small batch at consistent quality — including technical consultation.',
+      'business.card3.title': 'Custom corporate gifts',
+      'business.card3.text': 'Representative branded objects for clients, events, or your own team, in your colours.',
+      'business.cta': 'Discuss your project, no obligation',
+
       'materials.eyebrow': 'Materials',
       'materials.title': 'The right material for your project',
       'materials.lede': "Every material has its strengths. Pick a material to see all matching colours — or browse every colour at a glance. Click any colour for details.",
@@ -702,6 +714,19 @@
     }
 
     input.addEventListener('change', render);
+
+    var form = drop.closest('form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        var files = Array.from(input.files || []);
+        var total = files.reduce(function (sum, f) { return sum + f.size; }, 0);
+        if (total > MAX_TOTAL) {
+          e.preventDefault();
+          render();
+          drop.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    }
 
     ['dragenter', 'dragover'].forEach(function (evt) {
       drop.addEventListener(evt, function (e) {

@@ -37,6 +37,8 @@
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html.scroll-locked{overflow:hidden;height:100%}
+html.scroll-locked body{overflow:hidden;height:100%}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
@@ -261,9 +263,14 @@ body.no-js .intro{display:none}
 /* ============ Sections ============ */
 .section{padding:var(--space-7) 0}
 .section-soft{background:var(--bg-soft)}
+.section-dark{background:var(--navy-900)}
 .section-head{max-width:640px;margin:0 auto var(--space-5);text-align:center}
 .section-head.left{margin-left:0;text-align:left}
 .section-lede{color:var(--ink-soft)}
+.eyebrow-light{color:var(--green-500)}
+.h2-light{color:#fff}
+.section-lede-light{color:rgba(255,255,255,.78)}
+.business-cta{display:flex;justify-content:center;margin-top:var(--space-4)}
 
 /* ============ Cards ============ */
 .cards{display:grid;gap:var(--space-3)}
@@ -284,6 +291,11 @@ body.no-js .intro{display:none}
 }
 .card-icon .icon{width:26px;height:26px}
 .card p{color:var(--ink-soft);margin-bottom:0}
+
+.card-dark{background:var(--navy-700);border-color:rgba(255,255,255,.12)}
+.card-dark h3{color:#fff}
+.card-dark p{color:rgba(255,255,255,.72)}
+.card-icon-light{background:var(--green-500);color:var(--navy-900)}
 
 /* ============ Tabs ============ */
 .tab-list{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:var(--space-4)}
