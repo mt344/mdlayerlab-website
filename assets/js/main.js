@@ -748,6 +748,22 @@
     });
   }
 
+  /* ---------------- Prevent accidental double-submits ---------------- */
+  function initFormThrottle() {
+    var form = document.getElementById('kontaktForm');
+    var submitBtn = form && form.querySelector('button[type="submit"]');
+    if (!form || !submitBtn) return;
+    var busyText = { de: 'Wird gesendet …', en: 'Sending …' };
+
+    // Registered after initFileUpload's listener, so by the time this runs
+    // e.defaultPrevented already reflects the size-limit check.
+    form.addEventListener('submit', function (e) {
+      if (e.defaultPrevented) return;
+      submitBtn.disabled = true;
+      submitBtn.textContent = busyText[currentLang] || busyText.de;
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     runIntro();
     initNav();
@@ -755,6 +771,7 @@
     initColorDialog();
     initCompareCards();
     initFileUpload();
+    initFormThrottle();
     initLanguage(); // also triggers first renderMaterials()
     initYear();
   });
