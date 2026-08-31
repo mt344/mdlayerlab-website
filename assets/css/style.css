@@ -39,6 +39,7 @@
 html{scroll-behavior:smooth}
 html.scroll-locked{overflow:hidden;height:100%}
 html.scroll-locked body{overflow:hidden;height:100%}
+[id]{scroll-margin-top:90px}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
@@ -110,7 +111,7 @@ button{font:inherit}
 
 /* ============ Header ============ */
 .site-header{
-  position:sticky;top:0;z-index:60;
+  position:fixed;top:0;left:0;right:0;width:100%;z-index:60;
   background:rgba(255,255,255,.85);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
@@ -142,7 +143,7 @@ button{font:inherit}
 .header-inner{display:flex;align-items:center;gap:var(--space-3);height:76px}
 .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--navy-800);margin-right:auto}
 .brand-mark{width:42px;height:42px;border-radius:10px;object-fit:cover}
-.brand-word{font-family:var(--font-head);font-weight:700;font-size:1.05rem}
+.brand-word{font-family:var(--font-head);font-weight:700;font-size:1.05rem;white-space:nowrap}
 .brand-word em{font-style:normal;color:var(--green-600)}
 
 .main-nav{display:flex;gap:var(--space-4);align-items:center}
@@ -173,7 +174,10 @@ button{font:inherit}
 .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;background:none;border:none;cursor:pointer}
 .nav-toggle span{display:block;height:2px;background:var(--navy-800);border-radius:2px}
 
-@media (max-width:900px){
+/* This breakpoint is wider than the others below: with 6 nav items plus the
+   Shop badge, language toggle and WhatsApp button, the header needs more
+   room than 900px before everything fits on one line without wrapping. */
+@media (max-width:1080px){
   /* The header's backdrop-filter makes it the containing block for this
      fixed menu, so we set an explicit height instead of relying on bottom:0
      (which would collapse against the 76px-tall header). */
@@ -537,7 +541,7 @@ body.no-js .intro{display:none}
 @media (min-width:700px){.footer-copy{width:auto;text-align:right}}
 
 /* ============ Legal pages ============ */
-.legal{padding:var(--space-6) 0;max-width:760px;margin:0 auto}
+.legal{padding:calc(76px + var(--space-5)) 0 var(--space-6);max-width:760px;margin:0 auto}
 .legal h1{margin-bottom:var(--space-3)}
 .legal h2{font-size:1.2rem;margin-top:var(--space-4)}
 .legal p,.legal li{color:var(--ink-soft)}
@@ -546,9 +550,9 @@ body.no-js .intro{display:none}
 
 /* ============ Coming soon (shop) ============ */
 .coming-soon{
-  min-height:calc(100dvh - 77px);display:flex;align-items:center;justify-content:center;
+  min-height:100dvh;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(120% 100% at 50% 0%, var(--bg-soft), #fff 60%);
-  padding:var(--space-6) 0;
+  padding:calc(76px + var(--space-5)) 0 var(--space-6);
 }
 .coming-soon-inner{max-width:640px;margin:0 auto;text-align:center}
 .coming-soon h1{font-size:clamp(2rem,5vw,3rem)}

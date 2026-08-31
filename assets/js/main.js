@@ -64,7 +64,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && nav.classList.contains('is-open')) setOpen(false);
     });
-    window.matchMedia('(min-width:901px)').addEventListener('change', function (e) {
+    window.matchMedia('(min-width:1081px)').addEventListener('change', function (e) {
       if (e.matches) setOpen(false);
     });
   }
